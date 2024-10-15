@@ -1,0 +1,4 @@
+admin-->admin login
+adminnav-->admin details
+user-->userlogin
+usernav-->user details

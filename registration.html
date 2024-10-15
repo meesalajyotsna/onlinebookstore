@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .ad{
+            text-align: center;
+            color:orange;
+            padding-top: 10px;
+            
+    
+        }
+        input{
+            border-color:blue;
+        }
+
+    </style>
+    <script>
+            var myInput = document.getElementById("psw");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+            document.getElementById("message").style.display = "block";
+            }
+
+// When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+            document.getElementById("message").style.display = "none";
+            }
+
+// When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+  // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if(myInput.value.match(lowerCaseLetters)) {  
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+            }
+            else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+            }
+  
+  // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if(myInput.value.match(upperCaseLetters)) {  
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+            }
+            else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+            }
+
+  // Validate numbers
+            var numbers = /[0-9]/g;
+            if(myInput.value.match(numbers)) {  
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+            } 
+            else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+            }
+  
+  // Validate length
+            if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+        }
+            else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+    
+}     
+</script>
+</head>
+<body style="background-color:black">
+    <h1 style="text-align:center;color:brown">Registration Form</h1>
+    <form action="mailto:jyotsnameesala39@gmail.com">
+        <div class="ad">
+        <lable>First Name:-</lable>
+        <input type="text" name="firstname" required/>
+        <br><br>
+        <label>Last Name:-</label>
+        <input type="text" name="lastname" required/>
+        <br><br>
+        <lable>Enter Password:-</lable>
+        <input type="password" name="psw1" id="pswd1"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required/>
+        <br><br>
+        <label>Gender:</label>
+        <lable>
+        <input type="radio" name="Gender"  value="male"/>Male</lable>
+        <lable>
+        <input type="radio" name="Gender" value="female" />female</lable>
+        <br><br>
+        <label>Email:-</label>
+        <input type="email" name="email" required/>
+        <br><br>
+        <label>DOB:-</label>
+        <select>  
+            <option>01</option>  
+            <option>02</option>  
+            <option>03</option>
+            <option>04</option>  
+            <option>05</option>  
+            <option>06</option>
+            <option>07</option>  
+            <option>08</option>  
+            <option>09</option>
+            <option>10</option>  
+            <option>11</option>  
+            <option>12</option> 
+            <option>13</option>  
+            <option>14</option>  
+            <option>15</option>
+            <option>16</option>  
+            <option>17</option>  
+            <option>18</option>
+            <option>19</option>  
+            <option>20</option>  
+            <option>21</option> 
+            <option>22</option>  
+            <option>23</option>  
+            <option>24</option>
+            <option>25</option>  
+            <option>26</option>  
+            <option>27</option>
+            <option>28</option>  
+            <option>29</option>  
+            <option>30</option>
+            <option>31</option>
+        </select> 
+        <select>
+            <option>jan</option>  
+            <option>feb</option>  
+            <option>march</option>
+            <option>apr</option>  
+            <option>may</option>  
+            <option>june</option>
+            <option>july</option>  
+            <option>aug</option>  
+            <option>sep</option>
+            <option>oct</option>  
+            <option>nov</option>  
+            <option>dec</option>
+        </select>
+        <select>
+            <option>2000</option>  
+            <option>2001</option>  
+            <option>2002</option>
+            <option>2003</option>  
+            <option>2004</option>  
+            <option>2005</option>
+            <option>2006</option>  
+            <option>2007</option>  
+            <option>2008</option>
+            <option>2009</option>  
+            <option>2010</option>  
+            <option>2011</option>
+            <option>2012</option>  
+            <option>2013</option>  
+            <option>2014</option>
+        </select>
+        <br><br>
+        <label>Phone Number:-</label>
+        <input type="text" name="phn" required/>
+        <br><br>
+        <lable>Address:-</lable>
+        <textarea name="message" id="message" cols="20" rows="8"></textarea>
+        <br><br>
+        <input type="checkbox" name="check" checked/>
+        <lable>Agree to all Terms and Conditions</lable>
+        <br><br>
+        <button style="background-color:blue;color:white;border-color:blue" onclick="mypsw()">Submit</button>
+        <input type="reset" style="background-color: blue;color:white"/>
+    </div>
+    </form>
+    
+</body>
+</html>
